@@ -27,8 +27,8 @@ Rubric:
 
 ## Results
 
-GPU: Nvidia GTX 980 Ti
-CPU: Intel Core i7 4790k (4 physical cores, 8 virtual)
+* GPU: Nvidia GTX 980 Ti
+* CPU: Intel Core i7 4790k (4 physical cores, 8 virtual)
 
 | Image       | CPU     | GPU     | Speed Up    |
 | :---------: |:-------:|:-------:|:-----------:|
