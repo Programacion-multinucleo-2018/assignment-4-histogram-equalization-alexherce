@@ -24,3 +24,18 @@ Rubric:
 5. For the GPU version, used shared memory where necessary.
 6. Both images are displayed at the end.
 7. Calculation times and speedup obtained are incuded in the Readme.
+
+## Results
+
+GPU: Nvidia GTX 980 Ti
+CPU: Intel Core i7 4790k (4 physical cores, 8 virtual)
+
+| Image       | CPU     | GPU     | Speed Up    |
+| :---------: |:-------:|:-------:|:-----------:|
+| dog1.jpeg   | 39.0436 | 0.0325  |   1201.34   |
+| dog2.jpeg   | 51.9778 | 0.0335  |   1551.57   |
+| dog3.jpeg   | 52.2572 | 0.0315  |   1658.95   |
+| scenery.jpg |  2.2863 | 0.0217  |   105.35    |
+| woman.jpg   | 37.1473 | 0.0317  |   1171.83   |
+| woman2.jpg  | 30.1481 | 0.0332  |   908.07    |
+| woman3.jpg  | 39.2198 | 0.0312  |   1257.04   |
