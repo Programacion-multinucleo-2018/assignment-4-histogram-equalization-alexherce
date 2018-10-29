@@ -25,6 +25,12 @@ Rubric:
 6. Both images are displayed at the end.
 7. Calculation times and speedup obtained are incuded in the Readme.
 
+**NOTES**
+
+1. The histogram was not calculated using shared memory.
+
+**Grade: 90**
+
 ## Results
 
 * GPU: Nvidia GTX 980 Ti

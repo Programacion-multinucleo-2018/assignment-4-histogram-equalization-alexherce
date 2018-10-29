@@ -45,7 +45,6 @@ __global__ void normalize_histogram(float* histogram, float* histogram_normalize
 		}
 		histogram_normalized[nxy] = histogram_normalized[nxy] * 255 / (width * height);
 	}
-
 }
 
 __global__ void apply_histogram_image(unsigned char* input, unsigned char* output, float* histogram_normalized, int width, int height, int step) {
@@ -129,8 +128,8 @@ void normalize_gpu(const cv::Mat& input, cv::Mat& output) {
 	const dim3 block(32, 32);
 
 	// Calculate grid size to cover the whole image
-	// const dim3 grid((input.cols + block.x - 1) / block.x, (input.rows + block.y - 1) / block.y);
-	const dim3 grid((input.cols) / block.x, (input.rows) / block.y);
+	const dim3 grid((input.cols + block.x - 1) / block.x, (input.rows + block.y - 1) / block.y);
+	// const dim3 grid((input.cols) / block.x, (input.rows) / block.y);
 
 	// Launch the color conversion kernel
 	auto start_cpu = chrono::high_resolution_clock::now();
@@ -195,6 +194,10 @@ int main(int argc, char *argv[])
 	namedWindow("Input", cv::WINDOW_NORMAL);
 	namedWindow("Output_GPU", cv::WINDOW_NORMAL);
 	namedWindow("Output_CPU", cv::WINDOW_NORMAL);
+
+	cv::resizeWindow("Input", 800, 600);
+	cv::resizeWindow("Output_GPU", 800, 600);
+	cv::resizeWindow("Output_CPU", 800, 600);
 
 	// output = input_bw.clone();
 	imshow("Input", grayscale_input);
